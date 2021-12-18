@@ -1,0 +1,42 @@
+{
+    "Actions": [
+      {
+        "Icon": "images/action", 
+        "Name": "bi0s MQTT", 
+        "States": [
+          {
+            "Image": "images/actionDefaultImage",
+            "TitleAlignment": "middle", 
+            "FontSize": "16"
+          }
+        ], 
+        "SupportedInMultiActions": true,
+        "Tooltip": "Your small Stream Deck MQTT Client.", 
+        "UUID": "com.bi0s.mqtt.action"
+      }
+    ], 
+    "SDKVersion": 2,
+    "Author": "Patrick Herting", 
+    "CodePath": "index.html",
+    "PropertyInspectorPath": "pi.html",
+    "Description": "This lets you send payloads via ws mqtt.", 
+    "Name": "bi0s MQTT", 
+    "Icon": "images/plugin", 
+    "URL": "https://cuvico.de", 
+    "Version": "1.0",
+    "OS": [
+      {
+          "Platform": "mac", 
+          "MinimumVersion" : "10.11"
+      },
+      {
+          "Platform": "windows", 
+          "MinimumVersion" : "10"
+      }
+    ],
+    "Software": 
+      {
+          "MinimumVersion" : "4.1"
+      }
+  }
+  

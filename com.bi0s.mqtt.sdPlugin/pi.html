@@ -1,0 +1,67 @@
+<head>
+    <meta charset="utf-8" />
+    <title>bi0s MQTT PI</title>
+    <link rel="stylesheet" href="sdpi.css">
+    <script src="common.js"></script>
+</head>
+
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-heading" data-localize="MQTTSettings">MQTT Settings</div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Broker">Broker</div>
+            <input class="sdpi-item-value" id="valBroker" placeholder="cuvico.de">
+        </div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Port">Port</div>
+            <input class="sdpi-item-value" id="valPort" placeholder="9001">
+        </div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="ClientID">Client ID</div>
+            <input class="sdpi-item-value" id="valClientId" placeholder="bi0s1337">
+        </div>
+        <div class="sdpi-heading" data-localize="Payload">Payload</div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Topic">Topic</div>
+            <input class="sdpi-item-value" id="valTopic" placeholder="/to/topic">
+        </div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Message">Message</div>
+            <input class="sdpi-item-value" id="valMessage" placeholder="Hello, bi0s!">
+        </div>
+        <div class="sdpi-heading" data-localize="Save">Save</div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Save">Save</div>
+            <button class="sdpi-item-value" id="save" onclick="save()" data-localize="SaveSettings">Save settings</button>
+        </div>
+        <br />
+        <details class="message">
+            <summary>&copy; by bi0s 2021</summary>
+        </details>
+    <div>
+
+        <script>
+            if ($SD) {
+                $SD.on('connected', function (jsonObj) {
+                    if (jsonObj.hasOwnProperty('actionInfo')) {
+                        settings = Utils.getProp(jsonObj, 'actionInfo.payload.settings', {});
+                        document.getElementById("valBroker").value = settings.valBroker || "";
+                        document.getElementById("valPort").value = settings.valPort || "";
+                        document.getElementById("valClientId").value = settings.valClientId || "";
+                        document.getElementById("valTopic").value = settings.valTopic || "";
+                        document.getElementById("valMessage").value = settings.valMessage || "";
+                    }
+                });
+            };
+
+            const save = function() {
+                if($SD) {
+                    var payload = {};
+                    [].forEach.call(document.querySelectorAll(".sdpi-item-value"), element => {
+                        payload[element.id] = element.value;
+                    });
+                    $SD.api.sendToPlugin($SD.uuid, $SD.actionInfo["action"], payload);
+                }
+            }
+        </script>
+</body>

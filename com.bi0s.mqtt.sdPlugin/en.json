@@ -1,0 +1,20 @@
+{
+    "Description": "Send simple payloads to any WS MQTT Server.", 
+    "Name": "bi0s MQTT Stream Deck Client", 
+    "Category": "Productivity", 
+    "com.bi0s.mqtt.action": {
+      "Name": "Simple Button", 
+      "Tooltip": "Send payload via MQTT"
+    },
+    "Localization": {
+      "MQTTSettings": "MQTT Settings",
+      "SaveSettings": "Save settings",
+      "Save": "Save",
+      "Message": "Message",
+      "Topic": "Topic",
+      "Payload": "Payload",
+      "ClientID": "Client ID",
+      "Port": "Port",
+      "Broker": "Broker"
+    }
+  }

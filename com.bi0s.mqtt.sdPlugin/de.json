@@ -1,0 +1,20 @@
+{
+  "Description": "Sende einfache Befehler per WS an euern MQTT Server", 
+  "Name": "bi0s MQTT Stream Deck Client", 
+  "Category": "Productivity", 
+  "com.bi0s.mqtt.action": {
+    "Name": "Simpler Button", 
+    "Tooltip": "Sende Befehl per MQTT"
+  },
+  "Localization": {
+    "MQTTSettings": "MQTT Settings",
+    "SaveSettings": "Settings speichern",
+    "Save": "Speichern",
+    "Message": "Nachricht",
+    "Topic": "Topic",
+    "Payload": "Payload",
+    "ClientID": "Client ID",
+    "Port": "Port",
+    "Broker": "Broker"
+  }
+}
