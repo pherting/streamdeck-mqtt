@@ -16,14 +16,16 @@
       }
     ], 
     "SDKVersion": 2,
+    "Category": "MQTT",
+    "CategoryIcon": "images/action",
     "Author": "Patrick Herting", 
     "CodePath": "index.html",
     "PropertyInspectorPath": "pi.html",
-    "Description": "This lets you send payloads via ws mqtt.", 
+    "Description": "Your small Stream Deck MQTT Client. To use it, you need to enable WS (WebSocket) in your MQTT Broker.", 
     "Name": "bi0s MQTT", 
     "Icon": "images/plugin", 
-    "URL": "https://cuvico.de", 
-    "Version": "1.0",
+    "URL": "https://github.com/pherting/streamdeck-mqtt", 
+    "Version": "1.0.1",
     "OS": [
       {
           "Platform": "mac", 

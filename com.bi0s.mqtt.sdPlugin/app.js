@@ -1,6 +1,6 @@
 function sendMqtt(broker, port, clientid, topic, msg) {
     if(clientid == "") {
-        clientid = "bi0s1337";
+        clientid = makeId(8);
     }
     
     client = new Paho.MQTT.Client(broker, Number(port), clientid);
@@ -24,6 +24,16 @@ function connected(jsonObj) {
     $SD.on('com.bi0s.mqtt.action.propertyInspectorDidDisappear', (jsonObj) => { });
     $SD.on('com.bi0s.mqtt.action.sendToPlugin', (jsonObj) => action.onSendToPlugin(jsonObj));
 };
+
+function makeId(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
 
 const action = {
     onDidReceiveSettings: (jsonObj) => {
