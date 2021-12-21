@@ -5,9 +5,15 @@ Simple MQTT Client Plugin for Elgato Stream Deck.
 ## Coming soon
 - SSL activate / deactive Checkbox
 - Second Toggle Switch for on / off
-- Publish to Stream Deck Store
+- User Feedback on Success/Fail
 
 ## Changelog
+
+MQTT Plugin has been published to the store! 🎉
+Link: https://apps.elgato.com/plugins/com.bi0s.mqtt
+
+Thanks to Zack for the very fast help and publishing.
+
 - Version 1.0 -> 1.1:
     - Change Placeholder
     - Generate random ClientID
