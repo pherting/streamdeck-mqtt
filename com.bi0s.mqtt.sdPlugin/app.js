@@ -1,16 +1,31 @@
-function sendMqtt(broker, port, clientid, topic, msg) {
+function sendMqtt(jsonObj, broker, port, username, password, ssl, clientid, topic, msg) {
     if(clientid == "") {
         clientid = makeId(8);
     }
     
     client = new Paho.MQTT.Client(broker, Number(port), clientid);
-    client.connect({ onSuccess: () =>
-    {
-        message = new Paho.MQTT.Message(msg);
-        message.destinationName = topic;
-        client.send(message);
-        client.disonnect();
-    }});
+    client.connect({ 
+        onSuccess: () =>
+        {
+            message = new Paho.MQTT.Message(msg);
+            message.destinationName = topic;
+            client.send(message);
+
+            $SD.api.showOk(jsonObj);
+
+            client.disonnect();
+
+            return;
+        },
+        onFailure: () =>
+        {
+            $SD.api.showAlert(jsonObj);
+        },
+        timeout: 5,
+        useSSL: ssl === "true" ? true : false,
+        userName: username ? username : "",
+        password: password ? password : ""
+    });
 }
 
 $SD.on('connected', (jsonObj) => connected(jsonObj));
@@ -52,6 +67,6 @@ const action = {
     onKeyDown: (jsonObj) => {
         let settings = jsonObj.payload.settings;
 
-        sendMqtt(settings.valBroker, settings.valPort, settings.valClientId, settings.valTopic, settings.valMessage);
+        sendMqtt(jsonObj.context, settings.valBroker, settings.valPort, settings.valUsername, settings.valPassword, settings.valSsl, settings.valClientId, settings.valTopic, settings.valMessage);
     }
 };

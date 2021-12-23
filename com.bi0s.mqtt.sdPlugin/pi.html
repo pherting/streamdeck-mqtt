@@ -17,6 +17,21 @@
             <input class="sdpi-item-value" id="valPort" placeholder="Port">
         </div>
         <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Username">Username</div>
+            <input class="sdpi-item-value" id="valUsername" placeholder="Username">
+        </div>
+        <div class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Password">Password</div>
+            <input class="sdpi-item-value" id="valPassword" placeholder="Password">
+        </div>
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label" data-localize="Use SSL">Use SSL</div>
+            <select class="sdpi-item-value select" id="valSsl">
+               <option value="true" data-localize="Yes">Yes</option>
+               <option value="false" data-localize="No">No</option>
+            </select>
+        </div>
+        <div class="sdpi-item">
             <div class="sdpi-item-label" data-localize="ClientID">Client ID</div>
             <input class="sdpi-item-value" id="valClientId" placeholder="SomeRandomID">
         </div>
@@ -47,6 +62,9 @@
                         settings = Utils.getProp(jsonObj, 'actionInfo.payload.settings', {});
                         document.getElementById("valBroker").value = settings.valBroker || "";
                         document.getElementById("valPort").value = settings.valPort || "";
+                        document.getElementById("valUsername").value = settings.valUsername || "";
+                        document.getElementById("valPassword").value = settings.valPassword || "";
+                        document.getElementById("valSsl").value = settings.valSsl || "";
                         document.getElementById("valClientId").value = settings.valClientId || "";
                         document.getElementById("valTopic").value = settings.valTopic || "";
                         document.getElementById("valMessage").value = settings.valMessage || "";

@@ -25,7 +25,7 @@
     "Name": "bi0s MQTT", 
     "Icon": "images/plugin", 
     "URL": "https://github.com/pherting/streamdeck-mqtt", 
-    "Version": "1.0.1",
+    "Version": "1.2",
     "OS": [
       {
           "Platform": "mac", 

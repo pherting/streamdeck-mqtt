@@ -14,6 +14,11 @@
       "Topic": "Topic",
       "Payload": "Payload",
       "ClientID": "Client ID",
+      "Use SSL": "Use SSL",
+      "Yes": "Yes",
+      "No": "No",
+      "Username": "Username",
+      "Password": "Password",
       "Port": "Port",
       "Broker": "Broker"
     }
