@@ -20,6 +20,7 @@
     "Username": "Username",
     "Password": "Password",
     "Port": "Port",
-    "Broker": "Broker"
+    "Broker": "Broker",
+    "Retain": "Retain"
   }
 }

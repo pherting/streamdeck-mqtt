@@ -44,6 +44,13 @@
             <div class="sdpi-item-label" data-localize="Message">Message</div>
             <input class="sdpi-item-value" id="valMessage" placeholder="Hello, bi0s!">
         </div>
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label" data-localize="Retain">Retain</div>
+            <select class="sdpi-item-value select" id="valRetain">
+               <option value="true" data-localize="Yes">Yes</option>
+               <option value="false" data-localize="No">No</option>
+            </select>
+        </div>
         <div class="sdpi-heading" data-localize="Save">Save</div>
         <div class="sdpi-item">
             <div class="sdpi-item-label" data-localize="Save">Save</div>
@@ -51,7 +58,7 @@
         </div>
         <br />
         <details class="message">
-            <summary>&copy; by bi0s 2021</summary>
+            <summary>&copy; by bi0s 2022</summary>
         </details>
     <div>
 
@@ -68,6 +75,7 @@
                         document.getElementById("valClientId").value = settings.valClientId || "";
                         document.getElementById("valTopic").value = settings.valTopic || "";
                         document.getElementById("valMessage").value = settings.valMessage || "";
+                        document.getElementById("valRetain").value = settings.valRetain || "";
                     }
                 });
             };

@@ -12,6 +12,9 @@ Link: https://apps.elgato.com/plugins/com.bi0s.mqtt
 
 Thanks to Zack for the very fast help and publishing.
 
+- Version 1.2 -> 1.3:
+    - Add Retain Message Option
+
 - Version 1.1 -> 1.2:
     - Add SSL Option
     - Add Username, Password

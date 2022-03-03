@@ -1,4 +1,4 @@
-function sendMqtt(jsonObj, broker, port, username, password, ssl, clientid, topic, msg) {
+function sendMqtt(jsonObj, broker, port, username, password, ssl, clientid, topic, msg, retain) {
     if(clientid == "") {
         clientid = makeId(8);
     }
@@ -9,6 +9,8 @@ function sendMqtt(jsonObj, broker, port, username, password, ssl, clientid, topi
         {
             message = new Paho.MQTT.Message(msg);
             message.destinationName = topic;
+            message.retained = retain === "true" ? true : false;
+            
             client.send(message);
 
             $SD.api.showOk(jsonObj);
@@ -67,6 +69,6 @@ const action = {
     onKeyDown: (jsonObj) => {
         let settings = jsonObj.payload.settings;
 
-        sendMqtt(jsonObj.context, settings.valBroker, settings.valPort, settings.valUsername, settings.valPassword, settings.valSsl, settings.valClientId, settings.valTopic, settings.valMessage);
+        sendMqtt(jsonObj.context, settings.valBroker, settings.valPort, settings.valUsername, settings.valPassword, settings.valSsl, settings.valClientId, settings.valTopic, settings.valMessage, settings.valRetain);
     }
 };
